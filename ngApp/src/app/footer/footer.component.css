@@ -1,0 +1,39 @@
+/* .container{
+    background-image: url('../../assets/backgroundp.jpg');
+} */
+#back{
+    background-image: url('../../assets/backgroundpic.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.form-group{
+  
+    display: flex;
+    justify-content: flex-end;
+    /* padding: .5em; */
+}
+input{
+   
+    flex: 2;
+    
+}
+label{
+    padding: .5em 1em .5em 0;
+    flex: 1;
+}
+
+.row{
+    margin-left: 330px;
+    margin-bottom: 5px;
+    
+}
+.card-header{
+    background-color: blue;
+}
+.card{
+    border-radius: 8px;
+}
+.card-body{
+    font-size: larger;
+    font-weight: bold;
+}

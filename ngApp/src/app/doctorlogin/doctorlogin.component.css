@@ -1,0 +1,35 @@
+.card{
+    border-radius: 50px;
+}
+.card-header{
+    border-radius: 48px 40px 48px 0px;
+    background-color: blue;
+}
+.card-body{
+    font-size: larger;
+    font-weight: bold;
+}
+.left{
+    background-image: url("../../assets/doctors-2.jpg");
+    /* background-size: 200px 200px; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    width:24%;
+    height:550px;
+}
+.right{
+    
+    width: 60%;
+    height: 550px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.container{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    align-content: center;
+    /* background-color: rgb(130, 191, 235); */
+}

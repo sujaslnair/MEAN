@@ -1,0 +1,64 @@
+<div class="main" >
+    <!-- <img src="../../assets/doctors-2.jpg"> -->
+  
+<h4>Admin DashBoard</h4>
+
+
+<span class="slot"id="slot"(click)="slotChange()">
+    <button type="button"class="btn btn-info ">Slot Refresh</button>
+</span>
+
+<div class="table-responsive" >
+    <table class="table  table-bordered table-striped" id="data">
+            <thead>             
+                  <tr> 
+                      <th>Doctor</th>
+                      <th>Mob No</th>
+                      <!-- <th>Address</th> -->
+                      <th>Timing</th>
+                      <th>Date</th>
+                      <th>Slot 1</th>
+                      <th>Slot 2</th>
+                      <th>Slot 3</th>
+                      <th>Slot 4</th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor='let view of adminView'>
+                    
+                      <!-- <td><img *ngIf='showImage' 
+                          [src]='product.imageUrl'
+                      [title]='product.productName'
+                      [style.width.px]='imageWidth'
+                      [style.margin.px]='imageMargin'></td> -->
+                      <td>{{view.name}}</td>
+                      <td>{{view.mno}}</td>
+                      <!-- <th>{{view.address}}</th> -->
+                      <td>{{view.timing}}</td>
+                      <td>{{view.date}}</td>
+                      <td>{{view.slot1}}</td>
+                      <td>{{view.slot2}}</td>
+                      <td>{{view.slot3}}</td>
+                      <td>{{view.slot4}}</td>
+                      <td>
+                        <span class="edit"[routerLink]="['/update',view._id]">
+                            <button type="button"class="btn btn-info btn-sm"><i class="fa fa-edit"aria-hidden="true"></i></button>
+                            </span> 
+                        
+                            <span class="delete"(click)="delete(view)">
+                                <button type="button"class="btn btn-info btn-sm"><i class="fa fa-trash"aria-hidden="true"></i></button>
+                            </span>
+                      </td>
+                      <!-- <td><button (click)="edit(view)" type="button">Edit</button></td>
+                      <td><button (click)="delete(view)" type="button">Delete</button></td> -->
+                  </tr>
+                  
+              </tbody>
+          </table>
+          </div>
+        </div>
+       
+          
+          
+    

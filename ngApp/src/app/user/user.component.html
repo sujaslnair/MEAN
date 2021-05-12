@@ -1,0 +1,75 @@
+<div>
+    <div style="text-align: center;" id="image1">
+        <img src="../../assets/onlineappointment.jpg"height="400px" width="85%">
+        <!-- <img src="" height="500px" width="600px" *ngIf="(router.url==='/')"> -->
+        <p id="pid">Welcome {{username}}</p>
+        <div id="text1">
+        
+        <h5>You can select the Location from dropdown</h5>
+        <h6>Choose the doctors listed</h6>
+        <h6>select date and time slot</h6>
+      </div>
+    </div>
+    <div class="container">      
+        <div class="dropdown">
+            <h5>Select Location</h5>
+             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+             {{place}}
+             </button>
+              <div class="dropdown-menu">
+               <a class="dropdown-item" (click)="getlocation('1')">Pattom</a>
+                <a class="dropdown-item" (click)="getlocation('2')">Sasthamangalam</a>
+               <a class="dropdown-item" (click)="getlocation('3')">kazhakoottam</a>
+              </div>      
+        </div>
+    </div>
+      <div class="row mt-5">
+        
+        <div class="col-md-3 mb-3" id="card1" *ngFor="let detail of details;let i=index">
+            <div class="card text-center">
+              <div class="card-header">
+               <h5>Doctor's name:  {{detail.name}}</h5>
+              </div>
+                <div class="card-body">
+                    <!-- <h5 class="card-title">{{detail.name}}</h5> -->
+                    <h6 class="card-title">Dept:{{detail.special}}</h6>
+                    <p class="card-text">Timing :{{detail.timing}}</p>
+                    <!-- <a class="btn btn-primary"(click)="bookdate()">Book</a> -->
+                    <!-- <input type="text" class="form-control mb-3" placeholder="Datepicker" bsDatepicker /> -->
+                    <!-- <pre *ngIf="myForm.value.date" class="code-preview">{{myForm.value.date | date}}</pre> -->
+                    <!-- <div class="row form-group"> -->
+                        <input [(ngModel)]="appointment"
+                        placeholder="***date required click for date"
+                        class="form-control"
+                        bsDatepicker                      
+                        
+                        [minDate]="minDate"
+                        [maxDate]="maxDate" required>
+                        
+                        available slots<br>
+<!-- <div> -->
+  <a *ngIf ="detail.slot1=='available'"class="btn btn-info"(click)="bookdate(i,1)"tabindex="1">9am-10am</a>
+  <a *ngIf ="detail.slot2=='available'"class="btn btn-info"(click)="bookdate(i,2)"tabindex="2">10am-11am</a>
+  <a *ngIf ="detail.slot3=='available'"class="btn btn-info"(click)="bookdate(i,3)"tabindex="3">11am-12pm</a>
+  <a *ngIf ="detail.slot4=='available'"class="btn btn-info"(click)="bookdate(i,4)"tabindex="4">12pm-1pm</a>
+<!-- </div> -->
+<!-- </div> -->
+                        
+                </div>
+                <div class="card-footer ">
+                    Address : {{detail.address}}
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- end  -->
+    <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-12 col-md-4 form-group">
+            <!-- <h5>{{username}}</h5> -->
+            <!-- <p>{{}}</p> -->
+          </div>
+          
+        </div>
+      </div>
+</div>

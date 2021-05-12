@@ -1,0 +1,90 @@
+<div class="main">
+    <form [formGroup]="editAdminForm" (ngSubmit)="editAdmin()">
+        <br>
+        <h4>Update Appointment</h4>
+        <br>
+   
+        <div class="table-responsive">
+            <table class="table  table-bordered " id="data">
+                <tbody>
+                    <tr>
+                        <td><label for="">Doctor Name</label></td>
+                        <td><input type="text" formControlName="doctorName" 
+                             [class.is-invalid] = "editAdminForm.get('doctorName').invalid && 
+                             editAdminForm.get('doctorName').touched" class="form-control"   
+                             name="doctorName"   [(ngModel)]="appointment.name" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Mobile Number</label></td>
+                        <td><input type="text" formControlName="mno" 
+                            [class.is-invalid] = "editAdminForm.get('mno').invalid && 
+                            editAdminForm.get('mno').touched" class="form-control" 
+                            name="mno" [(ngModel)]="appointment.mno" required></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="">Address</label></td>
+                        <td><input type="text" formControlName= "address" 
+                             [class.is-invalid] = "editAdminForm.get('address').invalid &&
+                             editAdminForm.get('address').touched" class="form-control"
+                               name="address" [(ngModel)]="appointment.address" required></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="">Timing</label></td>
+                        <td><input type="text"  formControlName="time" 
+                            name="time" [(ngModel)]="appointment.timing" 
+                            class="form-control" [class.is-invalid] = "editAdminForm.get('time').invalid && 
+                            editAdminForm.get('time').touched" required></td>
+                    </tr>
+
+                    <!-- <tr>
+                        <td><label for="">Date of Appointment</label></td>
+                        <td><input type="text" formControlName="date" 
+                            name="date" [(ngModel)]="appointment.date" 
+                            class="form-control" [class.is-invalid] = "editAdminForm.get('date').invalid 
+                            && editAdminForm.get('date').touched" required></td>
+                    </tr> -->
+
+                    <tr>
+                        <td><label for="">Slot 1</label></td>
+                        <td><input type="text" formControlName= "slot1" name="slot1"
+                             [(ngModel)]="appointment.slot1" class="form-control"
+                              [class.is-invalid] = "editAdminForm.get('slot1').invalid &&
+                              editAdminForm.get('slot1').touched" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Slot 2</label></td>
+                        <td><input type="text" formControlName= "slot2" name="slot2"
+                             [(ngModel)]="appointment.slot2" class="form-control"
+                              [class.is-invalid] = "editAdminForm.get('slot2').invalid &&
+                              editAdminForm.get('slot2').touched" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Slot 3</label></td>
+                        <td><input type="text" formControlName= "slot3" name="slot3"
+                             [(ngModel)]="appointment.slot3" class="form-control"
+                              [class.is-invalid] = "editAdminForm.get('slot3').invalid &&
+                              editAdminForm.get('slot3').touched" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Slot 4</label></td>
+                        <td><input type="text" formControlName= "slot4" name="slot4"
+                             [(ngModel)]="appointment.slot4" class="form-control"
+                              [class.is-invalid] = "editAdminForm.get('slot4').invalid &&
+                              editAdminForm.get('slot4').touched" required></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td>    <button type="submit" [disabled]='editAdminForm.invalid'
+                             class="btn btn-success">Save</button></td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+   
+   </form>
+</div>

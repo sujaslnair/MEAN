@@ -1,0 +1,65 @@
+<!-- Form starts -->
+<h2 id="text1">Online Doctor Appointment Make it simple</h2>
+<div class="main">
+    
+    <div class="left">
+        <h6>Select the Location,Book Doctors Appointment and Pay Online.</h6>
+        <img src="../../assets/covid.jpg" alt="corona">
+        
+        <h6>Please take the risk assesment test for COVID 19 to proceed.  </h6>
+        <p>If you are in high risk the login will fail,you have to follow the government guidelines. </p>
+        <p>The system will take you to login page if you are at low risk.</p>
+    </div>
+    <div class="right">
+        <form class="form" #survey="ngForm" (ngSubmit)="userSurvey()">
+            <div class="form-group"[class.has-error]="age.touched && age.invalid">
+                <label class="control-label">Are you between age 10 and 60</label>
+                <div class="form-control">
+                    <label for="" class="radio-inline">
+                    <input type="radio"required #age="ngModel"value="yes"name="age"
+                    [(ngModel)]="employee.age">Yes</label>
+                    <label for="" class="radio-inline">
+                        <input type="radio"required #age="ngModel"value="no"name="age"
+                        [(ngModel)]="employee.age">No</label>
+                </div>
+            </div>
+            <div class="form-group"[class.has-error]="symptom.touched && symptom.invalid">
+                <label class="control-label">Do you have head-ache/fever/cough</label>
+                <div class="form-control">
+                    <label for="" class="radio-inline">
+                    <input type="radio"required #symptom="ngModel"value="yes"name="symptom"
+                    [(ngModel)]="employee.symptom">Yes</label>
+                    <label for="" class="radio-inline">
+                        <input type="radio"required #symptom="ngModel"value="no"name="symptom"
+                        [(ngModel)]="employee.symptom">No</label>
+                </div>
+            </div>
+            <div class="form-group"[class.has-error]="place.touched && place.invalid">
+                <label class="control-label">Do yo visit any Covid hign risk places in last 14 days</label>
+                <div class="form-control">
+                    <label for="" class="radio-inline">
+                    <input type="radio"required #place="ngModel"value="yes"name="place"
+                    [(ngModel)]="employee.place">Yes</label>
+                    <label for="" class="radio-inline">
+                        <input type="radio"required #place="ngModel"value="no"name="place"
+                        [(ngModel)]="employee.place">No</label>
+                </div>
+            </div>
+            <div class="form-group"[class.has-error]="people.touched && people.invalid">
+                <label class="control-label">Do you have contact with affected people</label>
+                <div class="form-control">
+                    <label for="" class="radio-inline">
+                    <input type="radio"required #people="ngModel"value="yes"name="people"
+                    [(ngModel)]="employee.people">Yes</label>
+                    <label for="" class="radio-inline">
+                        <input type="radio"required #people="ngModel"value="no"name="people"
+                        [(ngModel)]="employee.people">No</label>
+                </div>
+            </div>
+               
+            <button type="submit" [disabled]="survey.form.invalid" class="btn btn-success">Sign in</button> 
+        
+        </form>
+    </div>
+
+</div>

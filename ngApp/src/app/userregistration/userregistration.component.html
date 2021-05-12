@@ -1,0 +1,84 @@
+<div class="container"id="back">
+    <div class="row">
+        <div class="col-md-10 ">
+            <span class="anchor" id="formLogin"></span>
+<br><br>
+            <div class="card rounded-0">
+                <div class="card-header">
+                    <h3 class="mb-0">User Registration</h3>
+                </div>
+                <div class="card-body">
+                    <form class="form"[formGroup]="userRegister" (ngSubmit)="registerUser()">
+
+                        <div class="form-group">
+                             <label for="uname1">Username</label> 
+                            <!-- <input type="text"[(ngModel)]="userData.uname" name="uname" id="uname"> -->
+                            <input type="text"formControlName="uname" 
+                            [class.is-invalid]="userRegister.get('uname').invalid && userRegister.get('uname').touched "
+                            class="form-control rounded-o"name="uname" id="uname">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="uname1">Email</label>
+                            <!-- <input type="text"[(ngModel)]="userData.uemail" name="uemail" id="uemail"> -->
+                            <input type="text"formControlName="uemail" 
+                            [class.is-invalid]="userRegister.get('uemail').invalid && userRegister.get('uemail').touched "
+                            class="form-control rounded-o"name="uemail" id="uemail">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="uname1">Id Proof</label>
+                            <!-- <input type="text"[(ngModel)]="userData.uid" name="uid" id="uid"> -->
+                            <input type="text"formControlName="uid" 
+                            [class.is-invalid]="userRegister.get('uid').invalid && userRegister.get('uid').touched "
+                            class="form-control rounded-o"name="uid" id="uid">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="uname1">Mob Number</label>
+                            <!-- <input type="text"[(ngModel)]="userData.umno" name="umno" id="umno"> -->
+                            <input type="text"formControlName="umno" 
+                            [class.is-invalid]="userRegister.get('umno').invalid && userRegister.get('umno').touched "
+                            class="form-control rounded-o"name="umno" id="umno">
+                        </div>
+                        <div class="form-group">
+                            <label for="uname1">Place</label>
+                            <!-- <input type="text"[(ngModel)]="userData.uplace" name="uplace" id="uplace"> -->
+                            <input type="text"formControlName="uplace" 
+                            [class.is-invalid]="userRegister.get('uplace').invalid && userRegister.get('uplace').touched "
+                            class="form-control rounded-o"name="uplace" id="uplace">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="uname1">Age</label>
+                            <!-- <input type="text"[(ngModel)]="userData.uage" name="uage" id="uage"> -->
+                            <input type="text"formControlName="uage" 
+                            [class.is-invalid]="userRegister.get('uage').invalid && userRegister.get('uage').touched "
+                            class="form-control rounded-o"name="uage" id="uage">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pwd1">Password</label>
+                            <!-- <input type="password" [(ngModel)]="userData.upwd"name="password" id="password"> -->
+                            <input type="password"formControlName="upwd" 
+                            [class.is-invalid]="userRegister.get('upwd').invalid && userRegister.get('upwd').touched "
+                            class="form-control rounded-o"name="upwd" id="upwd">
+                        </div>
+                        <div *ngIf="userRegister.get('uemail').invalid &&
+                        userRegister.get('uemail').touched">
+                        <small *ngIf="userRegister.get('uemail').errors?.required" class="text-danger">Enter email</small>
+
+                        <small *ngIf="userRegister.get('uemail').errors?.serverError" class="text-danger">{{userRegister.get('uemail').errors?.serverError}}</small>
+
+                       </div>
+                        <!-- <button type="button" class="btn btn-primary"></button> -->
+                        <button type="submit" [disabled]='userRegister.invalid'class="btn btn-primary">Register</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

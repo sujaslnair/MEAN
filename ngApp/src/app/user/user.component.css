@@ -1,0 +1,39 @@
+.btn-info{
+    background-color: rgb(103, 218, 247);
+    margin-left: 3px;
+}
+.card-footer{
+    background-color: blue;
+    color: cornsilk;
+}
+.card-header{
+    background-color: blue;
+    color: cornsilk;
+}
+#text1{
+    position: absolute;
+    top: 220px;
+    left: 16px;
+    font-size: 18px;
+    text-shadow: 2px 2px 5px rgb(101, 200, 240);
+}
+#pid{
+    position: absolute;
+    top: 80px;
+    left: 16px;
+    font-size: 28px;
+    text-shadow: 2px 2px 5px rgb(38, 179, 235);
+}
+.col-md-3{
+    left: 180px;
+}
+input{
+    background-color: rgb(120, 220, 245);
+    border: 2px solid rgb(231, 19, 19);
+    
+    
+}
+#card1{
+    width:70%;
+    height: 50%;
+}

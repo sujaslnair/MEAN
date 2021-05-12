@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand">Online Appointment</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/"*ngIf="!_auth.loggedIn()" routerLinkActive="active">Home</a>
+      </li>
+      
+    </ul>
+
+    <ul class="navbar-nav">
+       <!-- <a class="nav-link" routerLink="/login" *ngIf="!_auth.loggedIn()" routerLinkActive="active" >User </a> -->
+       <a class="nav-link" routerLink="/userhome" *ngIf="!_auth.loggedIn()" routerLinkActive="active" >User </a> 
+       <a class="nav-link" routerLink="/adminLogin"*ngIf="!_auth.loggedIn()" routerLinkActive="active">Admin </a>
+       <a class="nav-link" routerLink="/doclogin" *ngIf="!_auth.loggedIn()"routerLinkActive="active">Doctor </a>
+       <a class="nav-link"  style="cursor:pointer" *ngIf="_auth.loggedIn()"(click)="logoutUser()" >Logout</a>
+      
+    </ul>
+    </div>
+</nav>
+
+
+<!-- <div class="container" id="footer">   -->
+  <router-outlet></router-outlet>
+<!-- </div> -->
+<footer>
+  <p style="text-align:center"> 
+      For further queries:    Onlinedoctorappointment@doc.app.com<br>
+     
+  </p>
+</footer>

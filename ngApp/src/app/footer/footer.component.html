@@ -1,0 +1,92 @@
+<div class="container" id="back">
+    <div class="row">
+        <div class="col-md-8 ">
+            <span class="anchor" id="formLogin"></span>
+  <br><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h3 class="mb-0">Registration</h3>
+                </div>
+                <div class="card-body">
+                    <form class="form"[formGroup]="doctorData" (ngSubmit)="registerDoctor()">
+  
+                        <div class="form-group">
+                            <label for="uname1">Doctor Name</label>
+                            <!-- <input type="text"[(ngModel)]="userData.uname" name="uname" id="uname"> -->
+                            <input type="text"formControlName="name" 
+                            [class.is-invalid]="doctorData.get('name').invalid && doctorData.get('name').touched "
+                            class="form-control rounded-o"name="name" id="name">
+                        </div>
+  
+                        <div class="form-group">
+                            <label for="uname1">Email</label>
+                            <!-- <input type="text"[(ngModel)]="userData.uemail" name="uemail" id="uemail"> -->
+                            <input type="text"formControlName="email" 
+                            [class.is-invalid]="doctorData.get('email').invalid && doctorData.get('email').touched "
+                            class="form-control rounded-o"name="email" id="email">
+                        </div>
+  
+                        <div class="form-group">
+                            <label for="uname1">Id Proof</label>
+                            <!-- <input type="text"[(ngModel)]="userData.uid" name="uid" id="uid"> -->
+                            <input type="text"formControlName="id" 
+                            [class.is-invalid]="doctorData.get('id').invalid && doctorData.get('id').touched "
+                            class="form-control rounded-o"name="id" id="id">
+                        </div>
+  
+                        <div class="form-group">
+                            <label for="uname1">Mob Number</label>
+                            <!-- <input type="text"[(ngModel)]="userData.umno" name="umno" id="umno"> -->
+                            <input type="text"formControlName="mno" 
+                            [class.is-invalid]="doctorData.get('mno').invalid && doctorData.get('mno').touched "
+                            class="form-control rounded-o"name="mno" id="mno">
+                        </div>
+                        <div class="form-group">
+                            <label for="uname1">Place</label>
+                            <!-- <input type="text"[(ngModel)]="userData.uplace" name="uplace" id="uplace"> -->
+                            <input type="text"formControlName="place" 
+                            [class.is-invalid]="doctorData.get('place').invalid && doctorData.get('place').touched "
+                            class="form-control rounded-o"name="place" id="place">
+                        </div>
+  
+                        <div class="form-group">
+                            <label for="uname1">Address</label>
+                            <!-- <input type="text"[(ngModel)]="userData.uage" name="uage" id="uage"> -->
+                            <input type="text"formControlName="address" 
+                            [class.is-invalid]="doctorData.get('address').invalid && doctorData.get('address').touched "
+                            class="form-control rounded-o"name="address" id="address">
+                        </div>
+  
+                        <div class="form-group">
+                            <label for="pwd1">Password</label>
+                            <!-- <input type="password" [(ngModel)]="userData.upwd"name="password" id="password"> -->
+                            <input type="password"formControlName="pwd" 
+                            [class.is-invalid]="doctorData.get('pwd').invalid && doctorData.get('pwd').touched "
+                            class="form-control rounded-o"name="pwd" id="pwd">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd1">Specialization</label>
+                            <!-- <input type="password" [(ngModel)]="userData.upwd"name="password" id="password"> -->
+                            <input type="text"formControlName="special" 
+                            [class.is-invalid]="doctorData.get('special').invalid && doctorData.get('special').touched "
+                            class="form-control rounded-o"name="special" id="special">
+                        </div>
+                        <div *ngIf="doctorData.get('email').invalid &&
+                        doctorData.get('email').touched">
+                        <small *ngIf="doctorData.get('email').errors?.required" class="text-danger">Enter email</small>
+  
+                        <small *ngIf="doctorData.get('email').errors?.serverError" class="text-danger">{{doctorData.get('email').errors?.serverError}}</small>
+  
+                       </div>
+                        <!-- <button type="button" class="btn btn-primary"></button> -->
+                        <button type="submit" [disabled]='doctorData.invalid'class="btn btn-success">Register</button>
+  
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  
+  
