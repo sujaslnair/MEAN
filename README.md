@@ -24,6 +24,9 @@ Running the Application
  Please check the ngApp(angular front-end) and Server -package.json for the dependencies
  
 Mongo Atlas is used for database.
+      
       under terminal of the ngApp use ng serve to start angular server
+      
       To start the Node server,use node server with in the server folder terminal. 
+      
       Open the browser with url https://localhost:4200 
